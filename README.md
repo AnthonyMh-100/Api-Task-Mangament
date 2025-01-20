@@ -4,6 +4,17 @@
  * Clonar el proyecto en su entorno local, **git clone respositorio**.
  * Instalar las dependencias del proyecto, **composer install** y luego generar la llave para el proyecto **php artisan key:generate**.
  * Para este proyecto se utilizo la base de datos de SqlLite, configurar los parámetros en el archivo .env.
+
+```ini
+# Configuración de la base de datos SQLite
+DB_CONNECTION=sqlite
+DB_HOST=127.0.0.1
+DB_PORT=
+DB_DATABASE=C:\xampp\htdocs\PruebaTecnicaApi\sqlTask.db -> Ruta local de la db.
+DB_USERNAME=
+DB_PASSWORD=
+```
+
  * Para este proyecto se utilizo la **autenticación JWT** por lo que se debe ejecutar el comando -> **php artisan jwt:secret**.
  * Luego ejecutar el comando para las migraciones,  **php artisan migrate**.
  * Finalmente ejecutar el comando **php artisan serve** para levantar el servidor.
@@ -38,7 +49,7 @@ Permite a un usuario autenticarse y recibir un token JWT.
 Content-Type: application/json
 ```
 
-**Respuesta 201**:
+**Respuesta 200**:
 
 ```json
 {
@@ -74,7 +85,7 @@ Registra un nuevo usuario en el sistema y devuelve un token JWT.
 Content-Type: application/json
 ```
 
-**Respuesta 200**:
+**Respuesta 201**:
 
 ```json
 {
